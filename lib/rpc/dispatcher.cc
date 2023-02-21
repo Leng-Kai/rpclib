@@ -38,6 +38,11 @@ response dispatcher::dispatch_call(RPCLIB_MSGPACK::object const &msg,
     auto &&name = std::get<2>(the_call);
     auto &&args = std::get<3>(the_call);
 
+    if (!func_counter.count(name)) {
+        func_counter[name] = 0;
+    }
+    func_counter[name]++;
+
     auto it_func = funcs_.find(name);
 
     if (it_func != end(funcs_)) {

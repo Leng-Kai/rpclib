@@ -105,6 +105,8 @@ public:
     //! \brief This is the type of notification messages.
     using notification_t = std::tuple<int8_t, std::string, RPCLIB_MSGPACK::object>;
 
+    std::unordered_map<std::string, uint64_t> func_counter;
+
 private:
     //! \brief Checks the argument count and throws an exception if
     //! it is not the expected amount.

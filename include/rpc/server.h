@@ -132,6 +132,10 @@ public:
     //! \brief Closes a specific session.
     void close_session(std::shared_ptr<detail::server_session> const& s);
 
+    uint64_t get_func_counter(std::string &name) {
+        return disp_->func_counter[name];
+    }
+
 private:
 	RPCLIB_DECLARE_PIMPL()
     std::shared_ptr<detail::dispatcher> disp_;
