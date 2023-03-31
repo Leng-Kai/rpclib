@@ -136,6 +136,11 @@ public:
         return disp_->func_counter[name];
     }
 
+    uint64_t get_total_counter(void) {
+	disp_->total_counter--;
+        return disp_->total_counter;
+    }
+
 private:
 	RPCLIB_DECLARE_PIMPL()
     std::shared_ptr<detail::dispatcher> disp_;

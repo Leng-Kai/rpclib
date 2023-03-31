@@ -42,6 +42,7 @@ response dispatcher::dispatch_call(RPCLIB_MSGPACK::object const &msg,
         func_counter[name] = 0;
     }
     func_counter[name]++;
+    total_counter++;
 
     auto it_func = funcs_.find(name);
 

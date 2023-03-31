@@ -107,6 +107,8 @@ public:
 
     std::unordered_map<std::string, uint64_t> func_counter;
 
+    uint64_t total_counter;
+
 private:
     //! \brief Checks the argument count and throws an exception if
     //! it is not the expected amount.
