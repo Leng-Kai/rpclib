@@ -164,6 +164,10 @@ struct client::impl {
 
 client::client(std::string const &addr, uint16_t port)
     : pimpl(new client::impl(this, addr, port)) {
+    printf("port: %u my_port: %u\n", port, my_port);
+    if (port == my_port) {
+        printf("warning: self RPC call!\n");
+    }
     tcp::resolver resolver(pimpl->io_);
     auto endpoint_it =
         resolver.resolve({pimpl->addr_, std::to_string(pimpl->port_)});

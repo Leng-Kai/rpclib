@@ -124,6 +124,8 @@ public:
     //! \brief Waits for the completion of all ongoing calls.
     void wait_all_responses();
 
+    static uint16_t my_port;
+
 private:
     //! \brief Type of a promise holding a future response.
     using rsp_promise = std::promise<RPCLIB_MSGPACK::object_handle>;
